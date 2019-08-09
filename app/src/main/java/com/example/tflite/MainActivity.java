@@ -1,4 +1,4 @@
-package com.amitshekhar.tflite;
+package com.example.tflite;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Executor executor = Executors.newSingleThreadExecutor();
     private TextView textViewResult;
-    private Button btnDetectObject, btnToggleCamera;
+    private Button btnDetectObject;
     private ImageView imageViewResult;
     private CameraView cameraView;
 
@@ -44,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
         textViewResult = findViewById(R.id.textViewResult);
         textViewResult.setMovementMethod(new ScrollingMovementMethod());
 
-        btnToggleCamera = findViewById(R.id.btnToggleCamera);
         btnDetectObject = findViewById(R.id.btnDetectObject);
 
         cameraView.addCameraKitListener(new CameraKitEventListener() {
@@ -76,13 +75,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onVideo(CameraKitVideo cameraKitVideo) {
 
-            }
-        });
-
-        btnToggleCamera.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                cameraView.toggleFacing();
             }
         });
 
